@@ -1,0 +1,20 @@
+mixin input(options, icon)
+  - options = options || {}
+  - options.cssClasses = (options.cssClasses || '') + (icon ? ' input__with-icon' : '')
+  div.form-element
+    if options.label
+      label= options.label
+    input(
+      id=options.id
+      type=(options.type || 'text')
+      value=options.value
+      name=options.name
+      class=options.cssClasses
+      required=options.required
+      pattern=options.pattern
+      placeholder=options.placeholder
+      )
+    if icon
+      span(
+        class='input-icon ' + icon
+        )

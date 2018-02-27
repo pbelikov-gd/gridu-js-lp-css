@@ -1,0 +1,31 @@
+extends ../../shared/html
+
+include ../../components/modal/modal
+include ../../components/input/input
+include ../../components/button/button
+
+block body
+  +modal('Login to "Demo Shop"', 'login-modal', 'login', {
+    name: 'login',
+    label: 'Submit',
+    class: '',
+    onclick: 'javascript:void(0)'
+  }, null)
+      form
+        +input({
+          type: 'text',
+          name: 'username',
+          value: '',
+          label: 'Your login:',
+          cssClasses: 'input-large login__input',
+          required: true,
+          pattern: '^[A-Za-z]+$'
+        }, 'mdi mdi-account')
+        +input({
+          type: 'password',
+          name: 'password',
+          value: '',
+          label: 'Your Password:',
+          cssClasses: 'input-large login__input',
+          required: true
+        }, 'mdi mdi-lock')

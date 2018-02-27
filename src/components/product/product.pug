@@ -1,0 +1,46 @@
+include ../button/button
+include ../rating/rating
+include ../modal/modal
+
+mixin product(options, isAdmin)
+  - productImage = options.image || "images/generic-product.jpg"
+  - actionText = options.action || 'Show more'
+  - productName = options.name || 'Nonamed Product'
+  - ratingValue = options.rating || 0
+  - price = Number(options.price || 0).toFixed(2)
+  - amount = options.amount || 0
+  - desc = options.desc || 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  div(class="product")
+    div(class="product-card")
+      div(class="card-image", style="background-image: url("+productImage+")")
+        +rating(ratingValue, 'card-rating')
+      div(class="card-body")
+        div(class="about")
+          h4=productName
+          div(class="card-desc")=desc
+          if isAdmin
+            div.card-admin
+              | You can
+              |
+              a.add-button(href="#add") add 5 more
+              | . You can also
+              |
+              a.edit-button(href="#edit") edit
+              |
+              | details or
+              |
+              a.delete-button(href="#delete") delete
+              |
+              | them.
+        div(class="price-and-more")
+          if amount > 0
+            div(class="card-price")=price
+            div(class="card-show-more")
+              +button({
+                label: actionText,
+                cssClasses: 'buy-button'
+              })
+          else
+            div(class="card-price")=price
+              span.sold-out
+                | (sold out)

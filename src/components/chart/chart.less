@@ -1,0 +1,28 @@
+.chart {
+  background: #fff;
+  width: 50%;
+  height: 300px;
+  float: left;
+  filter: brightness(90%);
+  -webkit-transition: filter .3s;
+  -moz-transition: filter .3s;
+  -ms-transition: filter .3s;
+  -o-transition: filter .3s;
+  transition: filter .3s;
+
+  &:hover {
+    filter: brightness(100%);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media(max-width: 800px)  {
+  .chart {
+    width: 100%;
+    float: none;
+  }
+}

@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../../images/checkered-background.png');
+  background-repeat: repeat;
+  background-color: @gray-lt;
+  margin: 0;
+  min-width: 460px;
+  font-family: "PT Sans", sans-serif;
+
+  &.has-modal-active {
+    overflow: hidden;
+    .container {
+      filter: blur(3px);
+    }
+  }
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  > section {
+    background: rgba(0, 0, 0, 0.25);
+    min-height: calc(~'100vh - 90px');
+    height: 100%;
+    margin: 0 20px;
+    padding: 5px;
+    overflow-y: auto;
+  }
+}
+
+@media(max-width: 1024px) {
+  div.container {
+    > section {
+      margin: 0;
+    }
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+div.not-displayed {
+  display: none;
+
+  &.modal-container {
+    display: none;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.item-inline-block {
+  display: inline-block;
+}

@@ -1,0 +1,10 @@
+mixin select(pValue, pItems, options)
+  - options = options || {}
+  - cssClasses = options.cssClasses || '' + (options.isWhite ? ' select-white' : '')
+  div.form-element
+    div.form-element__select-box
+      select(class=cssClasses)
+        each item in pItems
+          option(value=item.value, selected=item.value == pValue ? true : false)= item.label
+      label.lbl
+        i.fa.fa-chevron-down

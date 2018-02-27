@@ -1,0 +1,10 @@
+mixin rating(value, ratingClass)
+  - var rated = Math.min(value, 5)
+  - var left = 5 - rated
+  div(class='rating ' + (ratingClass || ''))
+    while rated > 0
+      - rated--
+      i(class="mdi mdi-star rating-starred")
+    while left > 0
+      - left--
+      i(class="mdi mdi-star rating-not-starred")

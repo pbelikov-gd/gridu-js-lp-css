@@ -1,0 +1,94 @@
+.form-element {
+  input[type="text"], input[type="password"], input[type="number"] {
+    box-sizing: border-box;
+    display: block;
+    border: 2px solid @form-default;
+    outline: @form-default;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px 10px;
+    line-height: 23px;
+    font-size: 14px;
+    height: 35px;
+    background-color: @white;
+    font-family: "PT Sans", sans-serif;
+
+    &.input-large {
+      height: 60px;
+      width: 100%;
+      line-height: 32px;
+      font-size: 24px;
+      padding: 10px 45px 10px 15px;
+
+      &.input__with-icon {
+        padding-right: 55px;
+
+        & + span.input-icon {
+          right: 30px;
+          bottom: 0;
+          font-size: 45px;
+        }
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      font-style: italic;
+      color: @placeholder;
+    }
+
+    &::-moz-placeholder {
+      font-style: italic;
+      color: @placeholder;
+    }
+    &:-ms-input-placeholder {
+      font-style: italic;
+      color: @placeholder;
+    }
+
+    &.input__with-icon {
+      padding-right: 27px;
+
+      & + span.input-icon {
+        position: absolute;
+        right: 12px;
+        bottom: 4px;
+        font-size: 20px;
+        color: @form-default-icon;
+      }
+    }
+
+    &:focus {
+      border-color: @form-focus;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-default-icon;
+      }
+    }
+
+    &:focus:invalid {
+      border-color: @form-required;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-required;
+      }
+    }
+
+    &:valid:not(.input-novalidate):not(.validate-on-focus) {
+      border-color: @form-valid;
+      outline: @form-valid;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-valid;
+      }
+    }
+
+    &.validate-on-focus:focus:valid:not(.input-novalidate) {
+      border-color: @form-valid;
+      outline: @form-valid;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-valid;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.form-element {
+  .form-element__select-box {
+    position: relative;
+
+    select {
+      display: block;
+      width: 100%;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      border: none;
+      background: @form-item;
+      line-height: 26px;
+      padding: 5px 10px;
+      color: @white;
+      font-size: 14px;
+      border-radius: 5px;
+      outline: none;
+
+      & + .lbl {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        pointer-events: none;
+        color: @white;
+      }
+
+      &.select-white {
+        background-color: @white;
+        color: @black;
+
+        & + .lbl {
+          color: @gray-lt;
+        }
+      }
+    }
+  }
+}
