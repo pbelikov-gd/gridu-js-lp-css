@@ -15,6 +15,12 @@ mixin input(options, icon)
       placeholder=options.placeholder
       )
     if icon
-      span(
-        class='input-icon ' + icon
-        )
+      if options.isLogin
+        span.input-icon.login-icon
+          include login/login-icon
+      if options.isPassword
+        span.input-icon.password-icon
+          include password/password-icon
+      if options.isSearch
+        span.input-icon.search-icon
+          include search/search-icon

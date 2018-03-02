@@ -1,9 +1,6 @@
+include ../components/cart/cart
+include ../components/logout/logout
+
 nav.main
-    div.cart
-        a(href="#")
-            i(class="mdi mdi-cart")
-    div.logout
-        span.logout__hello Hello,
-        span.logout__username PavelBelikov
-        a(href="#")
-            i(class="mdi mdi-logout")
+    +cart()
+    +logout('PavelBelikov')

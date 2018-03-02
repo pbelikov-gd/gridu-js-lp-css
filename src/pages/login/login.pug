@@ -19,13 +19,15 @@ block body
           label: 'Your login:',
           cssClasses: 'input-large login__input',
           required: true,
-          pattern: '^[A-Za-z]+$'
-        }, 'mdi mdi-account')
+          pattern: '^[A-Za-z]+$',
+          isLogin: true
+        }, true)
         +input({
           type: 'password',
           name: 'password',
           value: '',
           label: 'Your Password:',
           cssClasses: 'input-large login__input',
-          required: true
-        }, 'mdi mdi-lock')
+          required: true,
+          isPassword: true
+        }, true)

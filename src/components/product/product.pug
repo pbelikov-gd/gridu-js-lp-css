@@ -3,8 +3,9 @@ include ../rating/rating
 include ../modal/modal
 
 mixin product(options, isAdmin)
-  - productImage = options.image || "images/generic-product.jpg"
+  - productImage = options.image || "images/products/generic-product.jpg"
   - actionText = options.action || 'Show more'
+  - actionType = options.actionType || 'buy'
   - productName = options.name || 'Nonamed Product'
   - ratingValue = options.rating || 0
   - price = Number(options.price || 0).toFixed(2)
@@ -38,7 +39,7 @@ mixin product(options, isAdmin)
             div(class="card-show-more")
               +button({
                 label: actionText,
-                cssClasses: 'buy-button'
+                cssClasses: actionType === 'buy' ? 'buy-button' : ''
               })
           else
             div(class="card-price")=price

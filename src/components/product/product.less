@@ -2,7 +2,7 @@
   display: flex;
 
   > .product-card {
-    background: @white;
+    .striped-background();
     margin: 5px;
     transition: box-shadow .2s linear;
 
@@ -22,8 +22,12 @@
         border-bottom: 1px solid @gray;
         margin: 0 0 15px;
         padding: 10px 0;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
+      }
+
+      a {
+        color: @product-desc;
       }
 
       .card-desc {
@@ -41,7 +45,7 @@
         align-items: center;
         margin-top: 15px;
         padding-top: 15px;
-        height: 40px;
+        min-height: 45px;
 
         .card-price {
           font-weight: bold;
@@ -65,19 +69,12 @@
   }
 }
 
-@media(min-width: 800px) {
-  .single-product {
-    .product {
-      .product-card {
-        display: flex;
-        flex-direction: row;
-
-        .card-image {
-          width: 40%;
-        }
-
-        .card-body {
-          width: 60%;
+.single-product {
+  .product > {
+    & > .product-card {
+      .card-body {
+        h4 {
+          font-size: 24px;
         }
       }
     }

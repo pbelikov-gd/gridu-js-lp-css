@@ -26,7 +26,21 @@
         & + span.input-icon {
           right: 30px;
           bottom: 0;
-          font-size: 45px;
+
+          &.login-icon {
+            svg {
+              height: 50px;
+            }
+          }
+
+          &.password-icon {
+            bottom: 4px;
+            right: 35px;
+
+            svg {
+              height: 40px;
+            }
+          }
         }
       }
     }
@@ -46,14 +60,19 @@
     }
 
     &.input__with-icon {
-      padding-right: 27px;
+      padding-right: 29px;
 
       & + span.input-icon {
         position: absolute;
-        right: 12px;
-        bottom: 4px;
-        font-size: 20px;
+        right: 14px;
+        bottom: 3px;
         color: @form-default-icon;
+        fill: @form-default-icon;
+
+        svg {
+          height: 20px;
+          width: 20px;
+        }
       }
     }
 
@@ -62,6 +81,7 @@
 
       &.input__with-icon + span.input-icon {
         color: @form-default-icon;
+        fill: @form-default-icon;
       }
     }
 
@@ -70,6 +90,7 @@
 
       &.input__with-icon + span.input-icon {
         color: @form-required;
+        fill: @form-required;
       }
     }
 
@@ -79,6 +100,7 @@
 
       &.input__with-icon + span.input-icon {
         color: @form-valid;
+        fill: @form-valid;
       }
     }
 
@@ -88,6 +110,7 @@
 
       &.input__with-icon + span.input-icon {
         color: @form-valid;
+        fill: @form-valid;
       }
     }
   }
