@@ -1021,6 +1021,7 @@ nav.product-nav a {
 
 .review .review__header .preview__text {
   grid-column: 2;
+  margin-bottom: 15px;
 }
 
 .review .review__header .preview__text > div {
@@ -1039,20 +1040,21 @@ nav.product-nav a {
 
 .review .review__header .preview__text blockquote:before,
 .review .review__header .preview__text blockquote:after {
-  content: "\"";
+  content: "";
   position: absolute;
-  font-size: 80px;
-  color: #ffff00;
+  height: 17px;
+  width: 18px;
+  background: url("../images/quote.png") no-repeat;
 }
 
 .review .review__header .preview__text blockquote:before {
-  top: -33px;
-  left: -32px;
+  top: -5px;
+  left: -18px;
 }
 
 .review .review__header .preview__text blockquote:after {
-  bottom: -69px;
-  right: -14px;
+  bottom: -12px;
+  right: -27px;
 }
 
 .review .review__separator {
