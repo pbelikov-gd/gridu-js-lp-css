@@ -1,7 +1,7 @@
-extends ../../shared/page
-include ../../components/product/product
-include ../../components/product/nav/product-nav
-include ../../components/review/review
+extends ../shared/page
+include ../components/product/product
+include ../components/product/nav/product-nav
+include ../components/review/review
 
 block content
   +productNavigation('Man / Active wear')
@@ -16,5 +16,5 @@ block content
       price: 3000
     }, false)
   div.review-container
-    include ../../components/review-list/review-list
+    include ../components/review-list/review-list
     +review()
