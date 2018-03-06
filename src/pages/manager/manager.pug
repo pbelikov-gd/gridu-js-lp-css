@@ -2,5 +2,6 @@ extends ../../shared/page
 include ../../components/chart/chart
 
 block content
-  +chart('images/chart1.png')
-  +chart('images/chart2.png')
+  div.manager__charts
+    +chart('images/chart1.png')
+    +chart('images/chart2.png')
