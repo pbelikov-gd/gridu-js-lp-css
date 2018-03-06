@@ -940,6 +940,7 @@ div.modal-container div.modal > .modal-body > .modal-footer .button + .button {
   background-color: #ffffff;
   margin: 5px;
   transition: box-shadow 0.2s linear;
+  width: 100%;
 }
 
 .product > .product-card .card-image > .card-rating {
