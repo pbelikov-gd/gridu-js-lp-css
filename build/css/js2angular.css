@@ -19,6 +19,26 @@ body.has-modal-active .container {
   filter: blur(3px);
 }
 
+body.has-modal-active .body__blur {
+  display: block;
+}
+
+body .body__blur {
+  display: none;
+}
+
+body .body__blur:before {
+  content: "";
+  filter: blur(3px);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../images/bg.jpg");
+  background-repeat: repeat;
+}
+
 div.container {
   display: flex;
   flex-direction: column;
@@ -327,27 +347,29 @@ footer a {
 .form-element input[type="text"].input-large.input__with-icon + span.input-icon,
 .form-element input[type="password"].input-large.input__with-icon + span.input-icon,
 .form-element input[type="number"].input-large.input__with-icon + span.input-icon {
-  right: 30px;
-  bottom: 0;
+  right: 27px;
+  bottom: 2px;
 }
 
 .form-element input[type="text"].input-large.input__with-icon + span.input-icon.login-icon svg,
 .form-element input[type="password"].input-large.input__with-icon + span.input-icon.login-icon svg,
 .form-element input[type="number"].input-large.input__with-icon + span.input-icon.login-icon svg {
   height: 50px;
+  width: 50px;
 }
 
 .form-element input[type="text"].input-large.input__with-icon + span.input-icon.password-icon,
 .form-element input[type="password"].input-large.input__with-icon + span.input-icon.password-icon,
 .form-element input[type="number"].input-large.input__with-icon + span.input-icon.password-icon {
-  bottom: 4px;
-  right: 35px;
+  bottom: 6px;
+  right: 32px;
 }
 
 .form-element input[type="text"].input-large.input__with-icon + span.input-icon.password-icon svg,
 .form-element input[type="password"].input-large.input__with-icon + span.input-icon.password-icon svg,
 .form-element input[type="number"].input-large.input__with-icon + span.input-icon.password-icon svg {
   height: 40px;
+  width: 40px;
 }
 
 .form-element input[type="text"]::-webkit-input-placeholder,
@@ -383,8 +405,8 @@ footer a {
   position: absolute;
   right: 14px;
   bottom: 3px;
-  color: #BFD6D2;
-  fill: #BFD6D2;
+  color: #ECEBE9;
+  fill: #ECEBE9;
 }
 
 .form-element input[type="text"].input__with-icon + span.input-icon svg,
@@ -432,6 +454,20 @@ footer a {
 .form-element input[type="number"]:valid:not(.input-novalidate):not(.validate-on-focus).input__with-icon + span.input-icon {
   color: #00CA00;
   fill: #00CA00;
+}
+
+.form-element input[type="text"].validate-on-focus:valid:not(.input-novalidate),
+.form-element input[type="password"].validate-on-focus:valid:not(.input-novalidate),
+.form-element input[type="number"].validate-on-focus:valid:not(.input-novalidate) {
+  border-color: #9CC3BC;
+  outline: #9CC3BC;
+}
+
+.form-element input[type="text"].validate-on-focus:valid:not(.input-novalidate).input__with-icon + span.input-icon,
+.form-element input[type="password"].validate-on-focus:valid:not(.input-novalidate).input__with-icon + span.input-icon,
+.form-element input[type="number"].validate-on-focus:valid:not(.input-novalidate).input__with-icon + span.input-icon {
+  color: #9CC3BC;
+  fill: #9CC3BC;
 }
 
 .form-element input[type="text"].validate-on-focus:focus:valid:not(.input-novalidate),
@@ -835,6 +871,7 @@ div.modal-container div.modal {
   width: 90%;
   max-width: 600px;
   box-shadow: 2px 2px 4px -2px #000000;
+  border-radius: 15px;
 }
 
 div.modal-container div.modal > .modal-title {
@@ -843,7 +880,7 @@ div.modal-container div.modal > .modal-title {
   font-weight: bold;
   font-family: "PT Sans Caption", sans-serif;
   padding: 21px 15px 19px;
-  border-radius: 5px 5px 0 0;
+  border-radius: 15px 15px 0 0;
   font-size: 22px;
   line-height: 27px;
   height: 70px;
@@ -861,12 +898,12 @@ div.modal-container div.modal > .modal-body {
   background-repeat: repeat;
   background-color: #d4d4d4;
   padding: 15px 10px 10px;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 15px 15px;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.11);
 }
 
 div.modal-container div.modal > .modal-body > .modal-footer {
-  padding: 15px 10px 5px;
+  padding: 25px 10px 5px;
   text-align: right;
   clear: both;
 }
@@ -1152,6 +1189,10 @@ nav.product-nav a {
   margin: 20px 0 0;
 }
 
+.login-modal.modal-container {
+  background: transparent;
+}
+
 #login {
   width: 570px;
 }
@@ -1183,6 +1224,10 @@ nav.product-nav a {
   #login {
     width: 460px;
   }
+}
+
+.body__blur.login__blur {
+  display: block;
 }
 
 .products {

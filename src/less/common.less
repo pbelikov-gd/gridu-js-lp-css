@@ -12,8 +12,29 @@ body {
 
   &.has-modal-active {
     overflow: hidden;
+
     .container {
       filter: blur(3px);
+    }
+
+    .body__blur {
+      display: block;
+    }
+  }
+
+  .body__blur {
+    display: none;
+
+    &:before {
+      content: "";
+      filter: blur(3px);
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-image: url(../images/bg.jpg);
+      background-repeat: repeat;
     }
   }
 }

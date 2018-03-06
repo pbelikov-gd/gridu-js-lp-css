@@ -24,21 +24,23 @@
         padding-right: 55px;
 
         & + span.input-icon {
-          right: 30px;
-          bottom: 0;
+          right: 27px;
+          bottom: 2px;
 
           &.login-icon {
             svg {
               height: 50px;
+              width: 50px;
             }
           }
 
           &.password-icon {
-            bottom: 4px;
-            right: 35px;
+            bottom: 6px;
+            right: 32px;
 
             svg {
               height: 40px;
+              width: 40px;
             }
           }
         }
@@ -80,8 +82,8 @@
       border-color: @form-focus;
 
       &.input__with-icon + span.input-icon {
-        color: @form-default-icon;
-        fill: @form-default-icon;
+        color: @form-focus-icon;
+        fill: @form-focus-icon;
       }
     }
 
@@ -101,6 +103,16 @@
       &.input__with-icon + span.input-icon {
         color: @form-valid;
         fill: @form-valid;
+      }
+    }
+
+    &.validate-on-focus:valid:not(.input-novalidate) {
+      border-color: @form-focus;
+      outline: @form-focus;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-focus;
+        fill: @form-focus;
       }
     }
 

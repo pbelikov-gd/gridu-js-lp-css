@@ -5,7 +5,8 @@ include ../../components/input/input
 include ../../components/button/button
 
 block body
-  +modal('Login to "Demo Shop"', 'login-modal', 'login', {
+  div.body__blur.login__blur
+  +modal('Login to “Demo Shop”', 'login-modal', 'login', {
     name: 'login',
     label: 'Submit',
     class: '',
@@ -17,7 +18,7 @@ block body
           name: 'username',
           value: '',
           label: 'Your login:',
-          cssClasses: 'input-large login__input',
+          cssClasses: 'input-large login__input validate-on-focus',
           required: true,
           pattern: '^[A-Za-z]+$',
           isLogin: true
@@ -27,7 +28,7 @@ block body
           name: 'password',
           value: '',
           label: 'Your Password:',
-          cssClasses: 'input-large login__input',
+          cssClasses: 'input-large login__input validate-on-focus',
           required: true,
           isPassword: true
         }, true)
