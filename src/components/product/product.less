@@ -11,7 +11,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        padding: 5px 10px;
+        padding: 5px 11px;
         background: @black-smoke;
       }
     }
@@ -19,7 +19,7 @@
       padding-left: 10px;
 
       h4 {
-        border-bottom: 1px solid @gray;
+        border-bottom: 2px solid @product-separator;
         margin: 0 0 15px;
         padding: 10px 0;
         font-size: 18px;
@@ -31,7 +31,7 @@
       }
 
       .card-desc {
-        font-size: .8em;
+        font-size: 14px;
       }
 
       .card-admin {
@@ -44,16 +44,16 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 15px;
-        padding-top: 15px;
+        padding: 15px 0 5px;
         min-height: 45px;
 
         .card-price {
           font-weight: bold;
-          font-size: 20px;
+          font-size: 24px;
 
           &:before {
             content: "$";
-            color: @gray-lt;
+            color: @product-currency;
             font-weight: bold;
             padding-right: 4px;
           }
@@ -70,6 +70,8 @@
 }
 
 .single-product {
+  margin: 0 15px;
+
   .product > {
     & > .product-card {
       .card-body {

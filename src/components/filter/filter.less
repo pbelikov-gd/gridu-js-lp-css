@@ -1,6 +1,6 @@
 .filters {
   text-align: right;
-  padding: 5px 0 10px;
+  padding: 5px 10px 10px;
 
   > .form-element {
     display: inline-block;
@@ -28,7 +28,7 @@
       content: "";
       position: absolute;
       top: -11px;
-      left: 480px;
+      left: 460px;
       border-style: solid;
       border-width: 0 12px 12px;
       border-color: @white transparent;
@@ -42,7 +42,7 @@
       content: "";
       position: absolute;
       top: -12px;
-      left: 480px;
+      left: 460px;
       border-style: solid;
       border-width: 0 12px 12px;
       border-color: @gray-lt transparent;
@@ -60,9 +60,16 @@
       display: inline-block;
     }
 
-    &:checked ~ .filter-options {
-      visibility: visible;
-      display: block;
+    &:checked {
+      & + .button {
+        background: @gradient-primary-button-active;
+        box-shadow: inset 2px 2px 4px 0 rgba(0,0,0,0.3);
+      }
+
+      & ~ .filter-options {
+        visibility: visible;
+        display: block;
+      }
     }
   }
 }

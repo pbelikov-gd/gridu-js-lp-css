@@ -6,9 +6,7 @@
     width: 33.33%;
 
     > .product-card {
-      &:hover {
-        box-shadow: 0 0 5px @black;
-      }
+      margin: 15px;
 
       .card-image {
         height: 240px;
@@ -18,7 +16,11 @@
       }
 
       .card-body {
-        padding: 5px 10px 15px;
+        padding: 5px 15px 5px;
+        height: calc(~'100% - 240px');
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         & > .price-and-more {
           border-top: none;
@@ -55,6 +57,7 @@
         & > .price-and-more {
           border-top: 1px solid @gray-lt;
           margin-top: 15px;
+          padding-bottom: 5px;
         }
       }
     }
@@ -89,7 +92,12 @@
 
         .card-body {
           width: 100%;
-          padding: 5px 0 15px;
+          padding: 5px 0 5px;
+
+          & > .price-and-more {
+            padding-bottom: 0;
+          }
+
         }
       }
     }

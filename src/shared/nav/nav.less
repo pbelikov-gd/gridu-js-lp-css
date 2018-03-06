@@ -1,0 +1,22 @@
+@import (once) "../../components/cart/cart.less";
+@import (once) "../../components/logout/logout.less";
+
+nav.main {
+  background: @nav-background;
+  height: 45px;
+  color: @white;
+
+  .main-nav__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    div {
+      line-height: 46px;
+    }
+  }
+}
