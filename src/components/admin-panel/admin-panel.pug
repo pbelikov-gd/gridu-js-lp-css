@@ -42,7 +42,7 @@ div.admin-panel-content
       })
     div.grid-cell.desc-box
       label Description:
-      +textarea('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+      +textarea('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
   div.column
     div.grid-cell.image-link-box
       label Link to image:
@@ -51,10 +51,10 @@ div.admin-panel-content
         placeholder: 'Please enter link to image ...',
         required: false,
         pattern: '^http(s){0,1}:\/\/.+',
-        cssClasses: 'validate-on-focus'
+        cssClasses: 'validate-on-focus ignore-valid-not-on-focus'
       })
     div.grid-cell.image-box
-      img(src="images/products/generic-product.jpg")
+      img(src="images/products/generic-product.png")
     div.grid-cell.price-box
       label Price:
       +input({

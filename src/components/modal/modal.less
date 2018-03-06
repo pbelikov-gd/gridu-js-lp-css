@@ -13,7 +13,7 @@ div.modal-container {
   div.modal {
     background: transparent;
     width: 90%;
-    max-width: 600px;
+    max-width: 720px;
     box-shadow: 2px 2px 4px -2px @black;
     border-radius: 15px;
 
@@ -22,12 +22,13 @@ div.modal-container {
       color: @black;
       font-weight: bold;
       font-family: "PT Sans Caption", sans-serif;
-      padding: 21px 15px 19px;
+      padding: 21px 35px 19px;
       border-radius: 15px 15px 0 0;
       font-size: 22px;
       line-height: 27px;
       height: 70px;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11);
+      text-align: center;
 
       > div {
         white-space: nowrap;
@@ -38,9 +39,15 @@ div.modal-container {
 
     > .modal-body {
       .striped-background(@gray-lt);
-      padding: 15px 10px 10px;
+      padding: 15px 25px;
       border-radius: 0 0 15px 15px;
       box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.11);
+
+      > .modal-content {
+         > .disclaimer:first-child {
+           margin-top: 10px;
+         }
+      }
 
       > .modal-footer {
         padding: 25px 10px 5px;
@@ -57,7 +64,7 @@ div.modal-container {
   }
 }
 
-@media(max-width: 640px) {
+@media(max-width: 800px) {
   div.modal-container {
     padding-top: 20px;
     align-items: flex-start;

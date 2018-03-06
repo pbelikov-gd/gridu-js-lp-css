@@ -1,3 +1,14 @@
+div.modal-container {
+  &.edit-modal {
+    div.modal {
+      & > .modal-title {
+        text-align: left;
+        padding-right: 75px;
+      }
+    }
+  }
+}
+
 div.admin-panel-content {
   .column {
     width: 50%;
@@ -5,8 +16,14 @@ div.admin-panel-content {
 
     .grid-cell {
       & > label:first-child {
-        font-size: .8em;
-        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+
+    &:first-child {
+      .grid-cell {
+        padding-bottom: 15px;
+        padding-right: 30px;
       }
     }
 
@@ -33,12 +50,12 @@ div.admin-panel-content {
     }
 
     & > .image-box {
-      max-height: 195px;
-
       & > img {
+        display: block;
         width: 100%;
-        max-height: 185px;
-        border-radius: 5px;
+        min-height: 200px;
+        border: 1px solid @product-image-preview;
+        max-height: 215px
       }
     }
   }

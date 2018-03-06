@@ -24,7 +24,7 @@
         padding-right: 55px;
 
         & + span.input-icon {
-          right: 27px;
+          right: 30px;
           bottom: 2px;
 
           &.login-icon {
@@ -35,8 +35,8 @@
           }
 
           &.password-icon {
-            bottom: 6px;
-            right: 32px;
+            bottom: 7px;
+            right: 36px;
 
             svg {
               height: 40px;
@@ -123,6 +123,16 @@
       &.input__with-icon + span.input-icon {
         color: @form-valid;
         fill: @form-valid;
+      }
+    }
+
+    &.ignore-valid-not-on-focus:valid:not(:focus) {
+      border-color: @form-default;
+      outline: @form-default;
+
+      &.input__with-icon + span.input-icon {
+        color: @form-default;
+        fill: @form-default;
       }
     }
   }

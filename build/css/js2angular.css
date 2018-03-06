@@ -91,7 +91,6 @@ div.not-displayed.modal-container {
 .disclaimer {
   font-size: 24px;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .pull-right {
@@ -309,7 +308,7 @@ footer a {
   line-height: 27px;
   padding-left: 7px;
   font-weight: normal;
-  color: #555555;
+  color: #288575;
   cursor: pointer;
 }
 
@@ -353,7 +352,7 @@ footer a {
 .form-element input[type="text"].input-large.input__with-icon + span.input-icon,
 .form-element input[type="password"].input-large.input__with-icon + span.input-icon,
 .form-element input[type="number"].input-large.input__with-icon + span.input-icon {
-  right: 27px;
+  right: 30px;
   bottom: 2px;
 }
 
@@ -367,8 +366,8 @@ footer a {
 .form-element input[type="text"].input-large.input__with-icon + span.input-icon.password-icon,
 .form-element input[type="password"].input-large.input__with-icon + span.input-icon.password-icon,
 .form-element input[type="number"].input-large.input__with-icon + span.input-icon.password-icon {
-  bottom: 6px;
-  right: 32px;
+  bottom: 7px;
+  right: 36px;
 }
 
 .form-element input[type="text"].input-large.input__with-icon + span.input-icon.password-icon svg,
@@ -490,6 +489,20 @@ footer a {
   fill: #00CA00;
 }
 
+.form-element input[type="text"].ignore-valid-not-on-focus:valid:not(:focus),
+.form-element input[type="password"].ignore-valid-not-on-focus:valid:not(:focus),
+.form-element input[type="number"].ignore-valid-not-on-focus:valid:not(:focus) {
+  border-color: transparent;
+  outline: transparent;
+}
+
+.form-element input[type="text"].ignore-valid-not-on-focus:valid:not(:focus).input__with-icon + span.input-icon,
+.form-element input[type="password"].ignore-valid-not-on-focus:valid:not(:focus).input__with-icon + span.input-icon,
+.form-element input[type="number"].ignore-valid-not-on-focus:valid:not(:focus).input__with-icon + span.input-icon {
+  color: transparent;
+  fill: transparent;
+}
+
 .form-element.form-radio {
   font-size: .8em;
 }
@@ -531,12 +544,12 @@ footer a {
   line-height: 27px;
   padding-left: 7px;
   font-weight: normal;
-  color: #555555;
+  color: #000000;
   cursor: pointer;
 }
 
 .form-element.form-radio input[type="radio"]:checked ~ .label-text {
-  color: #000000;
+  color: #288575;
 }
 
 .form-element.form-range {
@@ -601,6 +614,7 @@ footer a {
   padding: 5px 10px;
   color: #ffffff;
   font-size: 14px;
+  font-family: "PT Sans", sans-serif;
   border-radius: 5px;
   outline: none;
 }
@@ -625,11 +639,12 @@ footer a {
 
 .form-element textarea {
   display: block;
+  resize: none;
   border: 1px solid transparent;
   outline: transparent;
   border-radius: 5px;
   width: 100%;
-  resize: none;
+  padding: 10px 15px;
   min-height: 150px;
   font-family: "PT Sans", sans-serif;
 }
@@ -639,14 +654,23 @@ footer a {
   padding: 0 20px;
 }
 
+div.modal-container.edit-modal div.modal > .modal-title {
+  text-align: left;
+  padding-right: 75px;
+}
+
 div.admin-panel-content .column {
   width: 50%;
   float: left;
 }
 
 div.admin-panel-content .column .grid-cell > label:first-child {
-  font-size: .8em;
-  font-weight: bold;
+  font-size: 15px;
+}
+
+div.admin-panel-content .column:first-child .grid-cell {
+  padding-bottom: 15px;
+  padding-right: 30px;
 }
 
 div.admin-panel-content .column > .gender-box > label {
@@ -669,14 +693,12 @@ div.admin-panel-content .column > .gender-box > .form-element:last-child {
   width: 33%;
 }
 
-div.admin-panel-content .column > .image-box {
-  max-height: 195px;
-}
-
 div.admin-panel-content .column > .image-box > img {
+  display: block;
   width: 100%;
-  max-height: 185px;
-  border-radius: 5px;
+  min-height: 200px;
+  border: 1px solid #D8D8D8;
+  max-height: 215px;
 }
 
 @media (max-width: 800px) {
@@ -880,7 +902,7 @@ div.modal-container {
 div.modal-container div.modal {
   background: transparent;
   width: 90%;
-  max-width: 600px;
+  max-width: 720px;
   box-shadow: 2px 2px 4px -2px #000000;
   border-radius: 15px;
 }
@@ -890,12 +912,13 @@ div.modal-container div.modal > .modal-title {
   color: #000000;
   font-weight: bold;
   font-family: "PT Sans Caption", sans-serif;
-  padding: 21px 15px 19px;
+  padding: 21px 35px 19px;
   border-radius: 15px 15px 0 0;
   font-size: 22px;
   line-height: 27px;
   height: 70px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11);
+  text-align: center;
 }
 
 div.modal-container div.modal > .modal-title > div {
@@ -908,9 +931,13 @@ div.modal-container div.modal > .modal-body {
   background-image: url("../images/modal-bg.png");
   background-repeat: repeat;
   background-color: #d4d4d4;
-  padding: 15px 10px 10px;
+  padding: 15px 25px;
   border-radius: 0 0 15px 15px;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.11);
+}
+
+div.modal-container div.modal > .modal-body > .modal-content > .disclaimer:first-child {
+  margin-top: 10px;
 }
 
 div.modal-container div.modal > .modal-body > .modal-footer {
@@ -923,7 +950,7 @@ div.modal-container div.modal > .modal-body > .modal-footer .button + .button {
   margin-left: 10px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   div.modal-container {
     padding-top: 20px;
     align-items: flex-start;
