@@ -16,13 +16,13 @@ mixin modal(title, modalClass, modalId, btnOK, btnCancel)
                   +button({
                     label: btnOK.label,
                     name: btnOK.name,
-                    cssClasses: 'button-big ' + btnOK.class,
+                    cssClasses: 'button-big ' + (btnOK.class || ''),
                     onClick: onOKClick
                   })
                 if btnCancel
                   +button({
                     label: btnCancel.label,
                     name: btnCancel.name,
-                    cssClasses: 'button-big ' + btnCancel.class,
+                    cssClasses: 'button-big ' + (btnCancel.class || ''),
                     onClick: onCancelClick
                   })
