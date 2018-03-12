@@ -12,6 +12,7 @@ const source = require('vinyl-source-stream');
 const plumber = require('gulp-plumber');
 const clean = require('gulp-rimraf');
 const flatten = require('gulp-flatten');
+const htmlBeautify = require('gulp-html-beautify');
 
 gulp.task('clean', [], () => {
   gulp
@@ -25,6 +26,7 @@ gulp.task('html', () => {
     .pipe(plumber())
     .pipe(pug())
     .pipe(flatten())
+    .pipe(htmlBeautify({indentSize: 2}))
     .pipe(gulp.dest('build/'));
 });
 
