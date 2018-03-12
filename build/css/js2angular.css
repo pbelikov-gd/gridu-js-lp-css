@@ -13,7 +13,7 @@ body.has-modal-active {
   overflow: hidden;
 }
 
-body.has-modal-active .container {
+body.has-modal-active .body__container {
   filter: blur(3px);
 }
 
@@ -36,7 +36,7 @@ body .body__blur:before {
   background: transparent url("../images/bg.jpg") repeat;
 }
 
-div.container {
+.body__container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -44,12 +44,12 @@ div.container {
   min-height: 100vh;
 }
 
-div.container div.section {
+.body__container .body__section-like {
   width: 100%;
   padding: 0 20px;
 }
 
-div.container div.section > section {
+.body__container .body__section-like > section {
   background: rgba(0, 0, 0, 0.25);
   min-height: calc(100vh - 90px);
   height: 100%;
@@ -60,7 +60,7 @@ div.container div.section > section {
 }
 
 @media (max-width: 1000px) {
-  div.container div.section {
+  .body__container .body__section-like {
     padding: 0;
   }
 }
@@ -118,6 +118,10 @@ div.not-displayed.modal-container {
   height: 28px;
   margin-top: 10px;
   margin-left: -4px;
+}
+
+.cart .cart__image svg {
+  enable-background: new 0 0 24 24;
 }
 
 .logout {
@@ -353,6 +357,12 @@ div.not-displayed.modal-container {
 .form-element input[type="number"].input-large.input__with-icon + span.input-icon.password-icon .icon-image {
   height: 40px;
   width: 40px;
+}
+
+.form-element input[type="text"].input-large.input__with-icon + span.input-icon .search-icon svg,
+.form-element input[type="password"].input-large.input__with-icon + span.input-icon .search-icon svg,
+.form-element input[type="number"].input-large.input__with-icon + span.input-icon .search-icon svg {
+  enable-background: new 0 0 24 24;
 }
 
 .form-element input[type="text"]::-webkit-input-placeholder,
