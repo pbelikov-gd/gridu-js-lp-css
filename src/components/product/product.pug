@@ -11,37 +11,38 @@ mixin product(options, isAdmin)
   - price = Number(options.price || 0).toFixed(2)
   - amount = options.amount || 0
   - desc = options.desc || 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  div(class="product")
-    div(class="product-card")
-      div(class="card-image", style="background-image: url("+productImage+")")
+  div.product
+    div.product-card
+      div.card-image
+        img.card-image__image-content(src=productImage)
         +rating(ratingValue, 'card-rating')
-      div(class="card-body")
-        div(class="about")
-          h4=productName
+      div.card-body
+        div.about
+          h4.card-body__product-name=productName
           div(class="card-desc")=desc
           if isAdmin
             div.card-admin
               | You can
               |
-              a.add-button(href="#add") add 5 more
+              a.card-admin__control.add-button(href="#add") add 5 more
               | . You can also
               |
-              a.edit-button(href="#edit") edit
+              a.card-admin__control.edit-button(href="#edit") edit
               |
               | details or
               |
-              a.delete-button(href="#delete") delete
+              a.card-admin__control.delete-button(href="#delete") delete
               |
               | them.
-        div(class="price-and-more")
+        div.price-and-more
           if amount > 0
-            div(class="card-price")=price
-            div(class="card-show-more")
+            div.card-price=price
+            div.card-show-more
               +button({
                 label: actionText,
                 cssClasses: actionType === 'buy' ? 'buy-button' : ''
               })
           else
-            div(class="card-price")=price
+            div.card-price=price
               span.sold-out
                 | (sold out)

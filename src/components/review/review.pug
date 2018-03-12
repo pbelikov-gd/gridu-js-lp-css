@@ -4,12 +4,12 @@ include ../textarea/textarea
 
 mixin review()
   div.review
-    h2 Add review
+    h2.review__header-add Add review
     div.review__header
       div.preview__title
         div.preview__author-published
           | By
-          span Your name
+          span.preview__author-name Your name
           | February 24, 2017
         div.preview_rating
           +rating(3)
@@ -28,7 +28,7 @@ mixin review()
           })
         label Choose your avatar:
         div.review__author-avatar
-          span Image not selected
+          span.review__author-avatar-image Image not selected
           i.mdi.mdi-upload
       div.grid-cell.review__text
         div.review__text-area

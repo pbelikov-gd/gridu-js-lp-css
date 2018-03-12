@@ -3,7 +3,7 @@
 .review {
   padding: 5px;
   
-  > h2 {
+  > .review__header-add {
     color: @white;
     margin: 0 0 5px;
   }
@@ -23,7 +23,7 @@
       .preview__author-published {
         color: @white;
 
-        span {
+        .preview__author-name {
           color: @yellow;
           font-style: italic;
           padding: 0 6px 0 3px;
@@ -126,12 +126,12 @@
       text-align: right;
       color: @gray-lt;
 
-      span {
+      .review__author-avatar-image {
         position: absolute;
         margin-left: -255px;
       }
 
-      i.mdi {
+      .mdi {
         border: 3px solid @gray-lt;
         border-radius: 15px;
         font-size: 41px;
@@ -161,7 +161,7 @@
     }
 
     .review__text_controls {
-      button {
+      .button {
         &.pull-left {
           margin-right: 10px;
         }

@@ -1,4 +1,4 @@
-div.modal-container {
+.modal-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +10,7 @@ div.modal-container {
   justify-content: center;
   overflow-y: auto;
 
-  div.modal {
+  .modal {
     background: transparent;
     width: 90%;
     max-width: 720px;
@@ -30,10 +30,11 @@ div.modal-container {
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11);
       text-align: center;
 
-      > div {
+      > .modal-title__content {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        margin: 3px 0 0;
       }
     }
 
@@ -65,7 +66,7 @@ div.modal-container {
 }
 
 @media(max-width: 800px) {
-  div.modal-container {
+  .modal-container {
     padding-top: 20px;
     align-items: flex-start;
   }

@@ -6,7 +6,7 @@ mixin modal(title, modalClass, modalId, btnOK, btnCancel)
   div(class='modal-container ' + modalClass)
       div(class='modal', id=modalId)
           div(class="modal-title")
-              div= title
+              h3.modal-title__content= title
           div(class="modal-body")
             div(class="modal-content")
               block
